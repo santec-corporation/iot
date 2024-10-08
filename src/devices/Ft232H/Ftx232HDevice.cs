@@ -256,7 +256,9 @@ namespace Iot.Device.FtCommon
             ftStatus |= FtFunction.FT_SetLatencyTimer(_ftHandle, 16);
             ftStatus |= FtFunction.FT_SetFlowControl(_ftHandle, (ushort)FtFlowControl.FT_FLOW_RTS_CTS, 0x00, 0x00);
             ftStatus |= FtFunction.FT_SetBitMode(_ftHandle, 0x00, FtBitMode.ResetIoBitMode);
+            Thread.Sleep(10);
             ftStatus |= FtFunction.FT_SetBitMode(_ftHandle, 0x00, FtBitMode.Mpsee);
+            Thread.Sleep(10);
 
             if (ftStatus != FtStatus.Ok)
             {
