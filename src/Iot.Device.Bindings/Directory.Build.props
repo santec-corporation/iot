@@ -1,9 +1,7 @@
 <Project>
   <!-- Packaging related properties -->
   <PropertyGroup>
-    <MajorVersion>3</MajorVersion>
-    <MinorVersion>2</MinorVersion>
-    <PreReleaseVersionIteration>1</PreReleaseVersionIteration>
+    <VersionPrefix>3.2.1</VersionPrefix>
     <VersionSuffix>Santec</VersionSuffix>
     <Description>This package provides a set of Device Bindings that use System.Device.Gpio package to communicate with a microcontroller.</Description>
     <PackageTags>.NET Core GPIO Pins SPI I2C PWM BCM2835 BCM2837 RPi IoT Device Bindings</PackageTags>

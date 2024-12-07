@@ -1,9 +1,7 @@
 <Project>
   <!-- Packaging related properties -->
   <PropertyGroup>
-    <MajorVersion>3</MajorVersion>
-    <MinorVersion>2</MinorVersion>
-    <PreReleaseVersionIteration>1</PreReleaseVersionIteration>
+    <VersionPrefix>3.2.1</VersionPrefix>
     <VersionSuffix>Santec</VersionSuffix>
     <Description>This package contains the BitmapImage adapter using SkiaSharp. This library is an optional package to provide imaging functionality for Iot.Device.Bidnings.dll</Description>
     <PackageTags>.NET Core IoT Device Bindings SkiaSharp Adapter</PackageTags>
