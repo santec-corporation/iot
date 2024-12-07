@@ -324,6 +324,7 @@ namespace Iot.Device.FtCommon
             Span<byte> toSend = stackalloc byte[1];
             toSend[0] = 0xAA;
             Write(toSend);
+            Thread.Sleep(100);
             Span<byte> toRead = stackalloc byte[2];
             Read(toRead);
             if (!((toRead[0] == 0xFA) && (toRead[1] == 0xAA)))
