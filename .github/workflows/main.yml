@@ -37,7 +37,7 @@ jobs:
         path: ${{ github.workspace }}/.nuget/packages
     - name: Build & Pack
       run: |
-        ./Build.cmd -ci  -configuration Release -prepareMachine /p:BuildPackages=true
+        ./Build.cmd -ci -configuration Release -prepareMachine /p:BuildPackages=true
     # Publish the NuGet package as an artifact, so they can be used in the following jobs
     - uses: actions/upload-artifact@v4
       with:
