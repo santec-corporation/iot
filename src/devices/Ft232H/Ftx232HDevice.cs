@@ -324,9 +324,8 @@ namespace Iot.Device.FtCommon
             Span<byte> toSend = stackalloc byte[1];
             toSend[0] = 0xAA;
             Write(toSend);
-            Thread.Sleep(50);
             Span<byte> toRead = stackalloc byte[2];
-            Read(toRead);
+            Read(toRead, 5000);
             if (!((toRead[0] == 0xFA) && (toRead[1] == 0xAA)))
             {
                 throw new IOException($"Failed to setup device {Description} in MPSSE mode using magic 0xAA sync");
@@ -1028,9 +1027,9 @@ namespace Iot.Device.FtCommon
             }
         }
 
-        internal int Read(Span<byte> buffer)
+        internal int Read(Span<byte> buffer, int timeout = 1000)
         {
-            CancellationToken token = new CancellationTokenSource(1000).Token;
+            CancellationToken token = new CancellationTokenSource(timeout).Token;
             int totalBytesRead = 0;
             uint bytesToRead = 0;
             uint numBytesRead = 0;
